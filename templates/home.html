@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			Machine Learning App with Flask
+		</div>
+		<h2>Air Quality Index Prediction</h2>
+		
+	</div>
+	</header>
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Click the Predict Button</p>
+		<!-- <input type="text" name="comment"/> -->
+		<!--<textarea name="message" rows="3" cols="5"></textarea> -->
+		<input type="text" name="Temperature" placeholder="Temperature" required="required" />
+		<input type="text" name="Pressure at sea level" placeholder="Pressure at sea level" required="required" />
+		<input type="text" name="Humidity" placeholder="Humidity" required="required" />
+		<input type="text" name="Visibilty" placeholder="Visibilty" required="required" />
+		<input type="text" name="Average wind speed" placeholder="Average wind speed" required="required" />
+		<input type="text" name="Maximum wind speed" placeholder="Maximum wind speed" required="required" />
+		
+		<br/>
+		<br/>
+		<br/>
+		<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+		
+	</form>
+	
+	{{ predict_PM }}
+		
+	</div>
+
+	
+	
+
+</body>
+</html>
